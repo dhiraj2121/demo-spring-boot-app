@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-spring-service
+spec:
+  selector:
+    app: demo-spring-boot-app
+  ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 80
+  type: NodePort

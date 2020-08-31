@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-spring-boot-app
+spec:
+  selector:
+      matchLabels:
+        app: demo-spring-boot-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: demo-spring-boot-app
+    spec:
+      containers:
+        - name: demo-spring-boot-app
+          image: docker.io/dhiraj2020/demo-spring-boot-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
